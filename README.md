@@ -52,9 +52,10 @@ Por padrão será utilizada a porta 3000 e o diretório `/data` na raiz do proje
 
 ## Endpoints implementados
 
-| Rota         | Função |
-| /            | lista os arquivos no diretório `data` |
-| /report/:csv | processa e retorna o arquivo csv escolhido |
+| Rota             | Função                                     |
+|------------------|-------------------------------------------:|
+| **/**            | lista os arquivos no diretório `data`      |
+| **/report/:csv** | processa e retorna o arquivo csv escolhido |
 
 ## Parâmetros
 

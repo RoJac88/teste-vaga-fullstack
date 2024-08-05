@@ -32,3 +32,38 @@ Você foi designado para desenvolver uma aplicação que deve lidar com grandes 
 A conclusão bem-sucedida deste teste será avaliada com base na implementação eficiente de conceitos como tratamento de dados em larga escala, comunicação assíncrona, gerenciamento de estado, manipulação de CSV, escolha adequada de tecnologias e boas práticas de desenvolvimento.
 
 Boa sorte!
+
+## Observações do candidato
+
+Como rodar a aplicação:
+```
+pnpm install
+pnpm run dev
+# ou
+pnpm run build
+pnpm start
+```
+
+## Configuração personalizada
+
+Utilize as variáveis de ambiente `PORT` e `DATA` para alterar a porta usada pelo servidor e o diretório onde ficarão os arquivos csv.
+
+Por padrão será utilizada a porta 3000 e o diretório `/data` na raiz do projeto.
+
+## Endpoints implementados
+
+| Rota         | Função |
+| /            | lista os arquivos no diretório `data` |
+| /report/:csv | processa e retorna o arquivo csv escolhido |
+
+## Parâmetros
+
+A rota `report` aceita parâmetros via query string para desabilitar algumas funcionalidades no processamento do arquivo:
+
+- **rawCurrency**=1: Desativa a formatação da moeda
+- **noCorrection**=1: Desativa a correção do valor da prestação
+- **allowInvalidId**=1: Mostra linhas com cpf ou cnpj inválido
+
+Por exemplo: `http://localhost:3000/report/data.csv?rawCurrency=1&allowInvalidId=1` incluí CPFs e CNPJs inválidos e não formata a moeda.
+
+Por padrão as linhas com CPFs e CNPJs inválidos não são retornadas, a moeda é formatada e o valor da prestação é recalculado quando estiver incorreto.

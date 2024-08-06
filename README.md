@@ -46,7 +46,7 @@ pnpm start
 
 ## Configuração personalizada
 
-Utilize as variáveis de ambiente `PORT` e `DATA` para alterar a porta usada pelo servidor e o diretório onde ficarão os arquivos csv.
+Utilize as variáveis de ambiente `PORT` e `DATA_DIR` para alterar a porta usada pelo servidor e o diretório onde ficarão os arquivos csv.
 
 Por padrão será utilizada a porta 3000 e o diretório `/data` na raiz do projeto.
 
